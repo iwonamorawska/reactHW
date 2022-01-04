@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Navbar from './components/Navbar';
+import { Routes, Route } from 'react-router-dom';
+import About from './views/About';
+import Contact from './views/Contact';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class Elephant extends Component {
+  render() {
+    return (
+      <div>
+        <Navbar/>
+        <h1>React Homework</h1>
+        <Routes>
+          <Route exact path='/about' element={<About/>}/>
+          <Route exact path='/contact' element={<Contact/>}/>
+        </Routes>
+      </div>
+    )
+  }
 }
-
-export default App;
